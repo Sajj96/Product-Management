@@ -7,11 +7,12 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { RouterModule } from '@angular/router';
 import { ProductModule } from './products/product.module';
+import { CustomersModule } from './customers/customers.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent  
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,8 @@ import { ProductModule } from './products/product.module';
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
-    ProductModule
+    ProductModule,
+    CustomersModule
   ],
   providers: [],
   bootstrap: [AppComponent]

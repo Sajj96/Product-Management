@@ -20,7 +20,7 @@
             <thead>
                 <tr>
                     <th>
-                        <button class="btn btn-primary"
+                        <button class="btn btn-outline-primary"
                             (click)='toggleImage()'>
                             {{ showImage ? 'Hide' : 'Show'}} Image
                         </button>
@@ -42,14 +42,21 @@
                             [style.margin.px] = 'imageMargin'
                         >
                     </td>
-                    <td><a [routerLink]="['/products', product.productId]">
+                    <td><a [routerLink]="['/products', product.id]">
                         {{ product.productName }}
                     </a></td>
                     <td>{{ product.productCode | lowercase | convertToSpaces: '-' }}</td>
                     <td>{{ product.releaseDate }}</td>
                     <td>{{ product.price | currency:'USD':'symbol':'1.2-2' }}</td>
                     <td><app-star [rating]='product.starRating'
-                        (ratingClicked)='onRatingClicked($event)'></app-star></td>
+                        (ratingClicked)='onRatingClicked($event)'></app-star>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-primary btn-sm"
+                                [routerLink]="['/products', product.id, 'edit']">
+                          Edit
+                        </button>
+                      </td>
                 </tr>
             </tbody>
         </table>

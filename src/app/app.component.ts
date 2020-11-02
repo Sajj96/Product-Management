@@ -17,6 +17,12 @@ import { Component } from '@angular/core';
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/products']">Product List</a>
           </li>
+          <li class='nav-item'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+              [routerLink]="['/products/0/edit']">Add Product</a>
+          </li>
+          <li class="nav-item mr-auto">
+            <a class="nav-link" [routerLink]="['/signup']">Sign Up</a>
+          </li>
         </ul>
       </div> 
     </nav>
